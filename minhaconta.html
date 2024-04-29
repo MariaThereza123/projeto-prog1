@@ -15,6 +15,7 @@
                 color: #333;
                 font-size:2em;
                 text-align: center;
+                margin: 50px;
             }
             h2{
                 color: #333;
@@ -31,7 +32,7 @@
                 margin-bottom: 50px;
             }
             .menu_1{
-                background-color: lightblue;
+                background-color:  #5d94b4;
                 height: 40px;
             }
             .menu_2{
@@ -74,28 +75,60 @@
                 width: 100%;
                 height: 100px;
             }
+            table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
 
+        th {
+            background-color:  #5d94b4;
+            font-weight: bold;
+            color: #555;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
 
         </style>
     </head>
 
 
     <body>
-        <div class="menu">
-            <ul>
-                <li><a class="active" href="index.html">Início</a></li>
-                <li><a class="active" href="apartamento.html">Apartamento</a></li>
-                <li><a href="compra.html">Primeiras Compras</a></li>
-                <li><a href="conta.html">Contas</a></li>
-                <li><a href="esppi.html">Estou Pronto Para Isso?</a></li>
-                <li><a href="mc.html">Minha Conta</a></li>
-              </ul>
-        </div>
+        <h1>Minha Conta </h1>
 
-        <div >
-            <h1> SIM, MEU CARO JOVEM, SUA VIDA ADULTA CUSTA CARO</h1>
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome </th>
+                    <th>Email</th>
+                    <th>Senha</th>
+                    <th>Idade</th>
+                    <th>Telefone</th>
+                    <th>Cidade de Residência</th>
+                </tr>
+            </thead>
+            <tbody id="dados">
+                
+            </tbody>
+        </table>
+    
+    
+        <script src="java.js"></script>
    
     </body>
     </html>
