@@ -124,6 +124,15 @@ input[type="submit"]:hover {
     margin-left: 735px;
     margin-top: 10px ;
      }    
+     .botao2{
+        background-color: #3a63d4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-left: 735px;
+    margin-top: 10px ;
+     }
 .p1{
      margin: 483px;
      text-align: center;
