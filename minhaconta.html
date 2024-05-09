@@ -1,134 +1,61 @@
-<html lang=""en-Us" style>
-    <head>
-        <title>Vou Morar Sozinho, e Agora?</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Dicas para quem vai morar sozinho-">
-        <style>
-            body{
-                font-family: Times New Roman, sans-serif;
-                margin: 0;
-                background-color: rgb(218, 209, 209)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Minha Conta</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dicas para quem vai morar sozinho-">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Minha Conta</h1>
 
-            }
-            h1{
-                color: #333;
-                font-size:2em;
-                text-align: center;
-                margin: 50px;
-            }
-            h2{
-                color: #333;
-                font-size:1.5em;
-                text-align: center;
-            }
-            p{
-                color: #333;
-                font-size:1em;
-                text-align-last: justify;
-                margin-left: 200px;
-                margin-right: 200px;
-                margin-top: 30px;
-                margin-bottom: 50px;
-            }
-            .menu_1{
-                background-color:  #5d94b4;
-                height: 40px;
-            }
-            .menu_2{
-                background-color: lightgreen;
-                 height: 80px;
-            }
-            .interna{
-                margin: 10px;
-                padding: 0;
-            }
-            ul {
-                display:inline;
-                justify-content: space-between;
-                list-style-type: none;
-                padding: 20px;
-                align-items: center;
-                background-color: #5d94b4;
-                position: fixed;
-                top: 0;
-                width: 100%;
-                margin: 0;
-            }
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Senha</th>
+                <th>Data de Nascimento</th>
+                <th>Telefone</th>
+                <th>Cidade de Residência</th>
+            </tr>
+        </thead>
+        <tbody id="dados">
+            
+        </tbody>
+    </table>
 
-            li {
-                float: left;
+    <script>
+        window.onload = function() {
+            var tabela = document.getElementById("dados");
+
+            // Verificar se os dados estão salvos no localStorage
+            if (localStorage.getItem("nome")) {
+                // Se os dados estiverem presentes, obter os valores do localStorage
+                var nome = localStorage.getItem("nome");
+                var email = localStorage.getItem("email");
+                var senha = localStorage.getItem("senha");
+                var data = localStorage.getItem("data");
+                var telefone = localStorage.getItem("telefone");
+                var cidade = localStorage.getItem("cidade");
+
+                // Preencher a tabela com os dados obtidos
+                var linha = tabela.insertRow();
+                linha.insertCell(0).innerHTML = nome;
+                linha.insertCell(1).innerHTML = email;
+                linha.insertCell(2).innerHTML = senha;
+                linha.insertCell(3).innerHTML = data;
+                linha.insertCell(4).innerHTML = telefone;
+                linha.insertCell(5).innerHTML = cidade;
+            } else {
+                // Se os dados não estiverem presentes, exibir uma mensagem
+                var linha = tabela.insertRow();
+                var celula = linha.insertCell();
+                celula.colSpan = "6";
+                celula.innerHTML = "Nenhum dado encontrado.";
             }
-
-            li a {
-                display: block;
-                color: rgb(11, 11, 12);
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
-
-            li a:hover {
-                background-color: #2b55e0cc;
-            }
-            .menu{
-                width: 100%;
-                height: 100px;
-            }
-            table {
-            width: 100%;
-            border-collapse: collapse;
-            border-spacing: 0;
-            margin-top: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color:  #5d94b4;
-            font-weight: bold;
-            color: #555;
-        }
-
-        tr:hover {
-            background-color: #f5f5f5;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        </style>
-    </head>
-
-
-    <body>
-        <h1>Minha Conta </h1>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome </th>
-                    <th>Email</th>
-                    <th>Senha</th>
-                    <th>Idade</th>
-                    <th>Telefone</th>
-                    <th>Cidade de Residência</th>
-                </tr>
-            </thead>
-            <tbody id="dados">
-                
-            </tbody>
-        </table>
-    
-    
-        <script src="java.js"></script>
-   
-    </body>
-    </html>
+        };
+    </script>
+</body>
+</html>
